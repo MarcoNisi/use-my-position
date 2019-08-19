@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react'
 
-interface IUseMyPosition {
+interface useMyPositionOptions {
   initialPosition?: Position,
   enableHighAccuracy?: boolean,
   immediate?: boolean
 }
 
-export default (props: IUseMyPosition) => {
-  const [myPosition, setMyPosition]: [Position | undefined, Function] = useState(props.initialPosition)
+export default (options: useMyPositionOptions) => {
+  const [myPosition, setMyPosition]: [Position | undefined, Function] = useState(options.initialPosition)
 
   useEffect(() => {
     const watcher = navigator.geolocation.watchPosition(
       pos => setMyPosition(pos),
       undefined,
-      { enableHighAccuracy: props.enableHighAccuracy }
+      { enableHighAccuracy: options.enableHighAccuracy }
     )
-    if (props.immediate) {
+    if (options.immediate) {
       navigator.geolocation.getCurrentPosition(
         pos => setMyPosition(pos),
         undefined,
-        { enableHighAccuracy: props.enableHighAccuracy }
+        { enableHighAccuracy: options.enableHighAccuracy }
       )
     }
     return () => navigator.geolocation.clearWatch(watcher)
