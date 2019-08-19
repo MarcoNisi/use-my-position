@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 
 interface IUseMyPosition {
-  initialPosition: Position,
-  enableHighAccuracy: boolean,
-  immediate: boolean
+  initialPosition?: Position,
+  enableHighAccuracy?: boolean,
+  immediate?: boolean
 }
 
 export default (props: IUseMyPosition) => {
-  const [myPosition, setMyPosition]: [Position, Function] = useState(props.initialPosition)
+  const [myPosition, setMyPosition]: [Position | undefined, Function] = useState(props.initialPosition)
 
   useEffect(() => {
     const watcher = navigator.geolocation.watchPosition(
