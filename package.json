@@ -1,0 +1,36 @@
+{
+  "name": "use-my-position",
+  "version": "0.1.0",
+  "description": "React Hook for using live position of device.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "./node_modules/.bin/tsc --watch",
+    "build": "./node_modules/.bin/tsc --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcoNisi/use-my-position.git"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "position",
+    "typescript"
+  ],
+  "author": "Marco Nisi",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/MarcoNisi/use-my-position/issues"
+  },
+  "homepage": "https://github.com/MarcoNisi/use-my-position#readme",
+  "devDependencies": {
+    "@types/react": ">=16.8",
+    "react": ">=16.8",
+    "typescript": "^3.5.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  }
+}
